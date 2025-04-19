@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'src/core/di/injection.dart';
+import 'src/features/presentation/pages/weather_page.dart';
 
 void main() {
+  configureDependencies();
   runApp(const MainApp());
 }
 
@@ -10,11 +13,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: WeatherPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
